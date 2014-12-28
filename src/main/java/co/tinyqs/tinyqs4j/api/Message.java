@@ -1,6 +1,67 @@
 package co.tinyqs.tinyqs4j.api;
 
-public interface Message<T> extends ByteMessage
+import java.util.Map;
+
+public class Message<T> implements ByteMessage
 {
-    public T getPayload();
+    private final ByteMessage byteMessage;
+    private final T payload;
+    
+    public static <T> Message<T> wrap(ByteMessage message, T payload)
+    {
+        return new Message<T>(message, payload);
+    }
+    
+    private Message(ByteMessage byteMessage, T payload)
+    {
+        this.byteMessage = byteMessage;
+        this.payload = payload;
+    }    
+    
+    public T getPayload()
+    {
+        return payload;
+    }
+
+    @Override
+    public String getUUID()
+    {
+        return byteMessage.getUUID();
+    }
+
+    @Override
+    public byte[] getBytes()
+    {
+        return byteMessage.getBytes();
+    }
+
+    @Override
+    public long getExpiration()
+    {
+        return byteMessage.getExpiration();
+    }
+
+    @Override
+    public int getDeliveryCount()
+    {
+        return byteMessage.getDeliveryCount();
+    }
+
+    @Override
+    public long getTimestamp()
+    {
+        return byteMessage.getTimestamp();
+    }
+
+    @Override
+    public Map<String, Object> getHeaders()
+    {
+        return byteMessage.getHeaders();
+    }
+
+    @Override
+    public long getDelay()
+    {
+        return byteMessage.getDelay();
+    }
 }

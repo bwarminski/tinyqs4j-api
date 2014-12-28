@@ -21,5 +21,6 @@ public interface ByteMessage
     public int getDeliveryCount();
     public long getTimestamp();
     public Map<String,Object> getHeaders();
+    public long getDelay();
     
 }
