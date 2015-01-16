@@ -2,6 +2,9 @@ package co.tinyqs.tinyqs4j.api;
 
 import java.util.Map;
 
+/**
+ * A byte message whose payload can be serialized to a specified type.
+ */
 public class Message<T> implements ByteMessage
 {
     private final ByteMessage byteMessage;
