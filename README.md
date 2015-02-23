@@ -1,7 +1,7 @@
 tinyqs4j
 ========
 
-A simple message queuing API, similar to JMS, for passing messages in point-to-point, publish-subscribe and request-response pattern.
+A simple message queuing API, similar to JMS, for passing messages in point-to-point, publish-subscribe and request-response patterns.
 
 The motivation was to distill the simple components of the JMS specification without some of the heavy weight and/or legacy requirements that can make
 full-fledged JMS client usage awkward and verbose in microservice-style applications. Aside from simplicity, key distinctions between JMS and tinyqs are:

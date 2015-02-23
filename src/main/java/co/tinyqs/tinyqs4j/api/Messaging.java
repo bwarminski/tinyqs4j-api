@@ -4,7 +4,7 @@ package co.tinyqs.tinyqs4j.api;
  * Represents a access point where channels, topics and conversations can be accessed
  * in order to send messages.
  */
-public interface Datastore 
+public interface Messaging 
 {
     /**
      * @return channel represented by the given name
